@@ -6,6 +6,9 @@ https://github.com/tianpeiyang/PTF_code
 
 然后需要将projects移动到home目录下下或者做个软链接
 
+启动方法：
+进去web_server目录后`uvicorn main:app --reload`
+
 #### 创建用户
 
 Request URL
