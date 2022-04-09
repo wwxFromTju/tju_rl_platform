@@ -31,7 +31,7 @@ def is_running(uid):
     return process.is_alive()
 
 
-def kill(uid):
+def kill(uid: str):
     if uid not in RUNNING_PROCESSES:
         return
     process, _ = RUNNING_PROCESSES[uid]

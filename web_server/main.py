@@ -14,9 +14,9 @@ from project import project_router
 import schemas
 from user import crud
 
-dataset_models.Base.metadata.create_all(bind=engine)
-
 config.prepare_directory()
+
+dataset_models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 app.include_router(user_router.router)

@@ -34,7 +34,7 @@ def create_experiment_for_project(
     train = importlib.import_module(f'project_register.{project_config["entry_path"]}').train
 
     dispatch(
-            db_experiment.id,
+            f'{db_experiment.project.owner.id}-{db_experiment.project.id}-{db_experiment.id}',
             train,
             project_file_path=project_config['train_file_path'],
             python_path=project_config['python_path'],
@@ -80,6 +80,6 @@ def stop_experiment(user_id: int, project_id: int, experiment_id: int, db: Sessi
     get_metrics = importlib.import_module(f'project_register.{project_config["entry_path"]}').get_metrics
     db_experiment.metric = get_metrics(db_experiment.log_path)
 
-    kill(db_experiment.id)
+    kill(f'{db_experiment.project.owner.id}-{db_experiment.project.id}-{db_experiment.id}')
 
     return db_experiment
