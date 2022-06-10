@@ -1,3 +1,4 @@
+from mimetypes import init
 from typing import Dict, Optional
 
 from pydantic import BaseModel
@@ -70,3 +71,16 @@ class Token(BaseModel):
 
 class TokenData(BaseModel):
     username: Optional[str] = None
+
+
+class SysData(BaseModel):
+    cpu_count: str
+    cpu_percent: str
+
+    mem_total: str
+    mem_used: str
+    mem_available: str
+    mem_percent: str
+
+
+

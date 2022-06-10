@@ -11,6 +11,7 @@ from database import SessionLocal, engine
 from experiment import experiment_router
 from user import user_router
 from project import project_router
+from sys_info import sys_router
 import schemas
 from user import crud
 
@@ -22,6 +23,7 @@ app = FastAPI()
 app.include_router(user_router.router)
 app.include_router(project_router.router)
 app.include_router(experiment_router.router)
+app.include_router(sys_router.router)
 
 @app.middleware("http")
 async def db_session_middleware(request: Request, call_next):
