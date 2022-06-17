@@ -82,5 +82,11 @@ class SysData(BaseModel):
     mem_available: str
     mem_percent: str
 
-
+    gpu_id_list: Optional[list] = None
+    gpu_name_dict: Optional[Dict] = None
+    gpu_load_dict: Optional[Dict] = None
+    gpu_free_memory_dict: Optional[Dict] = None
+    gpu_used_memory_dict: Optional[Dict] = None
+    gpu_total_memory_dict: Optional[Dict] = None
+    gpu_temperature_dict: Optional[Dict] = None
 
